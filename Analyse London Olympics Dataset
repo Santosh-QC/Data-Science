@@ -1,0 +1,38 @@
+import numpy as np
+
+#----------------------------------dataset--------------------------------------------------
+olympic_country_dataset = np.array(['GBR', 'CHN', 'RUS', 'US', 'KOR', 'JPN', 'GER'])
+olympic_gold = np.array([29, 38, 24, 46, 13, 7, 11])
+olympic_silver = np.array([17,28,25,28,8,14,11])
+olympic_bronze = np.array([19,22,32,29,7,17,14])
+#-------------------------------------------------------------------------------------------
+
+#----------------------------------Country with max gold------------------------------------
+max_gold = olympic_gold.argmax()
+country_max_gold = olympic_country_dataset[max_gold]
+country_max_gold
+#-------------------------------------------------------------------------------------------
+
+#----------------------------------Country with > 20 gold medals---------------------------------------
+for i in zip(olympic_country_dataset, olympic_gold):
+    if i[1] > 20:
+        print('the countries with more than 20 medals are {} with {} gold medals' . format(i[0], i[1]))
+#-------------------------------------------------------------------------------------------------------
+
+#----------------------------------Country medal tally -------------------------------------------------------------------------------
+for i in zip(olympic_country_dataset, olympic_gold, olympic_silver, olympic_bronze): 
+    print(' the medal tally of country {} for gold is {}, silver {} and  bronze {} respectively'. format(i[0], i[1], i[2], i[3]))
+#----------------------------------------------------- -------------------------------------------------------------------------------
+
+#----------------------------------total medal tally---------------------------------------
+a = olympic_gold.sum()
+b = olympic_silver.sum()
+c = olympic_bronze.sum()
+
+print (" the total number of medal tally is {}". format(a+b+c))
+#-------------------------------------------------------------------------------------------
+#----------------------------------Country with corresponding number of medals -------------------------------------------------------------------------------
+for i in zip(olympic_country_dataset, olympic_gold, olympic_silver, olympic_bronze): 
+    print(' the medal tally of country {} for gold is {}, silver {} and  bronze {} respectively'. format(i[0], i[1], i[2], i[3]))
+
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------
